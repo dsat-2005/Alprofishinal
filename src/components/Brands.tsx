@@ -1,45 +1,82 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-const brands = [
-  'LG',
-  'Samsung',
-  'Sharp',
-  'Toshiba',
-  'Midea',
-  'Carrier',
-  'Unionaire',
-  'Fresh',
-  'Zanussi',
-  'Bosch',
-  'Siemens',
-  'Whirlpool',
-  'Beko',
-  'Ariston',
-  'Haier',
-  'Panasonic',
-  'Hitachi',
-  'Daewoo',
+const brandLogos = [
+  '/brands/files_8269982-2026-02-03t17-55-47-631z-image.png',
+  '/brands/files_8269982-2026-02-03t17-55-55-401z-image.png',
+  '/brands/files_8269982-2026-02-03t17-56-13-296z-image.png',
+  '/brands/files_8269982-2026-02-03t17-56-27-364z-image.png',
+  '/brands/files_8269982-2026-02-03t17-56-49-713z-image.png',
 ];
 
 export default function Brands() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const brandsPerView = 6;
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % brands.length);
-    }, 3000);
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
 
-    return () => clearInterval(interval);
-  }, []);
+    let animationId: number;
+    let scrollPosition = 0;
+    const speed = 0.5;
 
-  const getVisibleBrands = () => {
-    const visible = [];
-    for (let i = 0; i < brandsPerView; i++) {
-      visible.push(brands[(currentIndex + i) % brands.length]);
-    }
-    return visible;
+    const animate = () => {
+      if (!isDragging) {
+        scrollPosition += speed;
+        const maxScroll = scrollContainer.scrollWidth / 2;
+
+        if (scrollPosition >= maxScroll) {
+          scrollPosition = 0;
+        }
+
+        scrollContainer.scrollLeft = scrollPosition;
+      }
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animationId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationId);
+  }, [isDragging]);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.pageX - (scrollRef.current?.offsetLeft || 0));
+    setScrollLeft(scrollRef.current?.scrollLeft || 0);
   };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - (scrollRef.current?.offsetLeft || 0));
+    setScrollLeft(scrollRef.current?.scrollLeft || 0);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - (scrollRef.current?.offsetLeft || 0);
+    const walk = (x - startX) * 2;
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - (scrollRef.current?.offsetLeft || 0);
+    const walk = (x - startX) * 2;
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+  };
+
+  const triplicatedLogos = [...brandLogos, ...brandLogos, ...brandLogos];
 
   return (
     <section className="py-20 bg-white">
@@ -53,34 +90,37 @@ export default function Brands() {
           </p>
         </div>
 
-        <div className="relative overflow-hidden">
-          <div className="flex gap-8 justify-center items-center py-8">
-            {getVisibleBrands().map((brand, index) => (
+        <div className="relative overflow-hidden py-8">
+          <div
+            ref={scrollRef}
+            className="flex gap-8 overflow-x-hidden cursor-grab active:cursor-grabbing select-none"
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleDragEnd}
+            onMouseLeave={handleDragEnd}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleDragEnd}
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {triplicatedLogos.map((logo, index) => (
               <div
-                key={`${brand}-${index}`}
-                className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 shadow-lg min-w-[150px] transform transition-all duration-500 hover:scale-110 hover:shadow-2xl"
+                key={index}
+                className="flex-shrink-0 bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 w-48 h-32 flex items-center justify-center border border-gray-100"
+                style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
               >
-                <p className="text-2xl font-bold text-blue-600 text-center whitespace-nowrap">
-                  {brand}
-                </p>
+                <img
+                  src={logo}
+                  alt={`Brand ${index + 1}`}
+                  className="max-w-full max-h-full object-contain pointer-events-none"
+                  draggable="false"
+                />
               </div>
             ))}
           </div>
 
-          <div className="flex justify-center gap-2 mt-6">
-            {Array.from({ length: Math.ceil(brands.length / brandsPerView) }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index * brandsPerView)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  Math.floor(currentIndex / brandsPerView) === index
-                    ? 'bg-blue-600 w-8'
-                    : 'bg-gray-300'
-                }`}
-                aria-label={`الانتقال إلى مجموعة الماركات ${index + 1}`}
-              />
-            ))}
-          </div>
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
         </div>
 
         <div className="mt-12 bg-blue-600 text-white rounded-2xl p-8 text-center">
