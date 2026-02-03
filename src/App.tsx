@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage';
 import AcMaintenancePage from './pages/AcMaintenancePage';
 import RefrigeratorMaintenancePage from './pages/RefrigeratorMaintenancePage';
 import WasherMaintenancePage from './pages/WasherMaintenancePage';
-import PlaceholderPage from './pages/PlaceholderPage';
+import DeepFreezerMaintenancePage from './pages/DeepFreezerMaintenancePage';
 
 function App() {
   return (
@@ -13,15 +13,7 @@ function App() {
         <Route path="/services/ac-maintenance" element={<AcMaintenancePage />} />
         <Route path="/services/refrigerator-maintenance" element={<RefrigeratorMaintenancePage />} />
         <Route path="/services/washer-maintenance" element={<WasherMaintenancePage />} />
-        <Route
-          path="/services/deep-freezer-maintenance"
-          element={
-            <PlaceholderPage
-              title="صيانة الديب فريزر بالفيوم – مركز Alprofishinal"
-              description="فنيين محترفين لصيانة جميع أنواع الديب فريزر بسرعة وضمان"
-            />
-          }
-        />
+        <Route path="/services/deep-freezer-maintenance" element={<DeepFreezerMaintenancePage />} />
       </Routes>
     </Router>
   );
