@@ -93,7 +93,7 @@ export default function Brands() {
         <div className="relative overflow-hidden py-8">
           <div
             ref={scrollRef}
-            className="flex gap-8 overflow-x-hidden cursor-grab active:cursor-grabbing select-none"
+            className="flex gap-0 overflow-x-hidden cursor-grab active:cursor-grabbing select-none"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleDragEnd}
@@ -106,7 +106,7 @@ export default function Brands() {
             {triplicatedLogos.map((logo, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 w-48 h-32 flex items-center justify-center border border-gray-100"
+                className="flex-shrink-0 bg-white hover:shadow-lg transition-all duration-300 w-52 h-40 flex items-center justify-center px-4 py-2"
                 style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
               >
                 <img
