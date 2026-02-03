@@ -8,6 +8,11 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black opacity-10"></div>
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          <img
+            src="/whatsapp_image_2026-02-03_at_3.26.12_pm.jpeg"
+            alt="مركز الفني للتكييف والتبريد"
+            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 drop-shadow-lg"
+          />
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             مركز الفني لصيانة التكييف والتبريد بالفيوم
           </h1>
