@@ -1,31 +1,43 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Brands from './components/Brands';
-import WhyChooseUs from './components/WhyChooseUs';
-import SEOSection from './components/SEOSection';
-import Testimonials from './components/Testimonials';
-import CoverageAreas from './components/CoverageAreas';
-import Contact from './components/Contact';
-import FloatingButtons from './components/FloatingButtons';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import AcMaintenancePage from './pages/AcMaintenancePage';
+import PlaceholderPage from './pages/PlaceholderPage';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <Hero />
-      <About />
-      <WhyChooseUs />
-      <Services />
-      <Brands />
-      <SEOSection />
-      <Testimonials />
-      <CoverageAreas />
-      <Contact />
-      <FloatingButtons />
-      <div className="pb-20"></div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services/ac-maintenance" element={<AcMaintenancePage />} />
+        <Route
+          path="/services/refrigerator-maintenance"
+          element={
+            <PlaceholderPage
+              title="صيانة الثلاجات بالفيوم – مركز Alprofishinal"
+              description="فنيين محترفين لصيانة جميع أنواع الثلاجات بسرعة وضمان"
+            />
+          }
+        />
+        <Route
+          path="/services/washer-maintenance"
+          element={
+            <PlaceholderPage
+              title="صيانة الغسالات الهاف بالفيوم – مركز Alprofishinal"
+              description="فنيين محترفين لصيانة جميع أنواع الغسالات بسرعة وضمان"
+            />
+          }
+        />
+        <Route
+          path="/services/deep-freezer-maintenance"
+          element={
+            <PlaceholderPage
+              title="صيانة الديب فريزر بالفيوم – مركز Alprofishinal"
+              description="فنيين محترفين لصيانة جميع أنواع الديب فريزر بسرعة وضمان"
+            />
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

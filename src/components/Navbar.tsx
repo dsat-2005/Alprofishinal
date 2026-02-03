@@ -1,14 +1,24 @@
-import { Phone, MessageCircle } from 'lucide-react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Phone, MessageCircle, ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
   const phoneNumber = '01020136636';
   const whatsappNumber = '201020136636';
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+
+  const services = [
+    { name: 'صيانة التكييفات', path: '/services/ac-maintenance' },
+    { name: 'صيانة الثلاجات', path: '/services/refrigerator-maintenance' },
+    { name: 'صيانة الغسالات الهاف', path: '/services/washer-maintenance' },
+    { name: 'صيانة الديب فريزر', path: '/services/deep-freezer-maintenance' },
+  ];
 
   return (
     <nav className="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img
               src="/whatsapp_image_2026-02-03_at_3.26.12_pm.jpeg"
               alt="Alprofishinal"
@@ -17,21 +27,38 @@ export default function Navbar() {
             <span className="text-xl font-bold text-blue-600">
               Alprofishinal
             </span>
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            <a
-              href="#home"
+            <Link
+              to="/"
               className="text-gray-700 hover:text-blue-600 font-semibold transition-colors"
             >
               الرئيسية
-            </a>
-            <a
-              href="#services"
-              className="text-gray-700 hover:text-blue-600 font-semibold transition-colors"
+            </Link>
+            <div
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
             >
-              خدماتنا
-            </a>
+              <button className="text-gray-700 hover:text-blue-600 font-semibold transition-colors flex items-center gap-1">
+                خدماتنا
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              {isServicesOpen && (
+                <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[250px]">
+                  {services.map((service, index) => (
+                    <Link
+                      key={index}
+                      to={service.path}
+                      className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold transition-colors"
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="hidden md:flex items-center gap-3">

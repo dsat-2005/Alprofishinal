@@ -1,30 +1,33 @@
+import { Link } from 'react-router-dom';
 
 const services = [
   {
     image: 'ac-maintenance.jpg',
     title: 'صيانة التكييفات',
     description: 'نقدم خدمات إصلاح وصيانة جميع أنواع التكييفات، سواء سبليت أو شباك، مع فحص شامل، تنظيف، شحن فريون، وإصلاح الأعطال لضمان أفضل أداء.',
+    link: '/services/ac-maintenance',
   },
   {
     image: 'refrigerator-maintenance.jpg',
     title: 'صيانة الثلاجات',
     description: 'نصلح جميع أعطال الثلاجات والفريزر، ضعف التبريد، تسريب المياه، مشاكل الموتور، مع استخدام قطع غيار أصلية لضمان عمر أطول للجهاز.',
+    link: '/services/refrigerator-maintenance',
   },
   {
     image: 'washer-maintenance.jpg',
     title: 'صيانة الغسالات الهاف',
     description: 'نقدم خدمات صيانة وإصلاح الغسالات الهاف بجميع أنواعها، أعطال العصر، عدم التفريغ، ضعف الموتور، وتسريب المياه، مع فنيين متخصصين وخدمة سريعة داخل الفيوم.',
+    link: '/services/washer-maintenance',
   },
   {
     image: 'deep-freezer-maintenance.jpg',
     title: 'صيانة الديب فريزر',
     description: 'خدمات متكاملة لإصلاح وصيانة جميع أنواع الديب فريزر، أعطال التجميد، ضعف التبريد، واستبدال قطع الغيار التالفة بسرعة ودقة.',
+    link: '/services/deep-freezer-maintenance',
   },
 ];
 
 export default function Services() {
-  const phoneNumber = '201020136636';
-
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -57,14 +60,12 @@ export default function Services() {
                 <p className="text-gray-600 leading-relaxed text-center mb-6 flex-grow">
                   {service.description}
                 </p>
-                <a
-                  href={`https://wa.me/${phoneNumber}?text=أريد الاستفسار عن ${service.title}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={service.link}
                   className="bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-700 transition-all text-center"
                 >
                   المزيد
-                </a>
+                </Link>
               </div>
             </div>
           ))}
