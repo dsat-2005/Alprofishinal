@@ -64,7 +64,7 @@ export default function Contact() {
                 <MapPin className="w-8 h-8" />
                 <h3 className="text-2xl font-bold">موقعنا</h3>
               </div>
-              <p className="text-lg">الفيوم – مصر</p>
+              <p className="text-lg">منطقة قحافة -الفيوم – مصر</p>
             </div>
           </div>
 
