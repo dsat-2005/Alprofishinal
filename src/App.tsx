@@ -12,9 +12,9 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <WhyChooseUs />
       <Services />
       <Brands />
-      <WhyChooseUs />
       <FloatingButtons />
       <div className="pb-20"></div>
     </div>
