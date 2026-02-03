@@ -20,26 +20,24 @@ export default function Brands() {
 
     let animationId: number;
     let scrollPosition = 0;
-    const speed = 0.5;
+    const speed = 1;
 
     const animate = () => {
-      if (!isDragging) {
-        scrollPosition += speed;
-        const maxScroll = scrollContainer.scrollWidth / 2;
+      scrollPosition += speed;
+      const oneSetWidth = scrollContainer.scrollWidth / 3;
 
-        if (scrollPosition >= maxScroll) {
-          scrollPosition = 0;
-        }
-
-        scrollContainer.scrollLeft = scrollPosition;
+      if (scrollPosition >= oneSetWidth) {
+        scrollPosition = 0;
       }
+
+      scrollContainer.scrollLeft = scrollPosition;
       animationId = requestAnimationFrame(animate);
     };
 
     animationId = requestAnimationFrame(animate);
 
     return () => cancelAnimationFrame(animationId);
-  }, [isDragging]);
+  }, []);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
