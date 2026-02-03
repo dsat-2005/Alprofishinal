@@ -4,23 +4,23 @@ export default function Hero() {
   const phoneNumber = '01234567890';
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white min-h-screen flex items-center">
+    <section id="home" className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white min-h-screen flex items-center pt-16">
       <div className="absolute inset-0 bg-black opacity-10"></div>
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <img
             src="/whatsapp_image_2026-02-03_at_3.26.12_pm.jpeg"
-            alt="مركز الفني للتكييف والتبريد"
+            alt="Alprofishinal"
             className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 drop-shadow-lg"
           />
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            مركز الفني لصيانة التكييف والتبريد بالفيوم
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Alprofishinal
           </h1>
-          <p className="text-xl md:text-2xl mb-4 font-semibold">
+          <h2 className="text-2xl md:text-3xl mb-4 font-semibold">
+            مركز متخصص في صيانة التكييف والتبريد والأجهزة المنزلية بالفيوم
+          </h2>
+          <p className="text-xl md:text-2xl mb-10 font-semibold">
             خدمة سريعة – فنيين محترفين – أسعار مناسبة
-          </p>
-          <p className="text-lg md:text-xl mb-10 opacity-90">
-            نوفر خدمات صيانة متكاملة للتكييف والثلاجات والغسالات في جميع أنحاء الفيوم
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
