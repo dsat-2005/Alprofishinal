@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AcMaintenancePage from './pages/AcMaintenancePage';
+import RefrigeratorMaintenancePage from './pages/RefrigeratorMaintenancePage';
 import PlaceholderPage from './pages/PlaceholderPage';
 
 function App() {
@@ -9,15 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services/ac-maintenance" element={<AcMaintenancePage />} />
-        <Route
-          path="/services/refrigerator-maintenance"
-          element={
-            <PlaceholderPage
-              title="صيانة الثلاجات بالفيوم – مركز Alprofishinal"
-              description="فنيين محترفين لصيانة جميع أنواع الثلاجات بسرعة وضمان"
-            />
-          }
-        />
+        <Route path="/services/refrigerator-maintenance" element={<RefrigeratorMaintenancePage />} />
         <Route
           path="/services/washer-maintenance"
           element={
