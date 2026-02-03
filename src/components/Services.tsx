@@ -23,7 +23,7 @@ const services = [
 ];
 
 export default function Services() {
-  const phoneNumber = '01234567890';
+  const phoneNumber = '201020136636';
 
   return (
     <section id="services" className="py-20 bg-gray-50">

@@ -1,7 +1,8 @@
 import { Phone, MessageCircle } from 'lucide-react';
 
 export default function Hero() {
-  const phoneNumber = '01234567890';
+  const phoneNumber = '01020136636';
+  const whatsappNumber = '201020136636';
 
   return (
     <section id="home" className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white min-h-screen flex items-center pt-16">
@@ -33,7 +34,7 @@ export default function Hero() {
             </a>
 
             <a
-              href={`https://wa.me/${phoneNumber}`}
+              href={`https://wa.me/${whatsappNumber}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg flex items-center gap-3 w-full sm:w-auto justify-center"

@@ -10,16 +10,11 @@ export default function CoverageAreas() {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            المناطق التي نخدمها
+            نخدم جميع مناطق الفيوم
           </h2>
 
-          <p className="text-xl md:text-2xl leading-relaxed mb-8">
-            نحن نغطي جميع أنحاء محافظة الفيوم
-          </p>
-
-          <p className="text-lg leading-relaxed opacity-90">
-            يصل فريقنا المحترف إلى جميع مناطق وأحياء الفيوم لتقديم خدمات الصيانة
-            السريعة والموثوقة. أينما كنت في الفيوم، نحن في خدمتك دائماً.
+          <p className="text-xl md:text-2xl leading-relaxed">
+            نقدم خدماتنا في جميع مراكز وقرى محافظة الفيوم بسرعة واستجابة فورية، مع إمكانية الوصول في نفس اليوم.
           </p>
         </div>
       </div>
