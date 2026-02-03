@@ -11,3 +11,17 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes scroll-brands {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-calc(208px * 5));
+  }
+}
+
+.brands-scroll {
+  animation: scroll-brands 20s linear infinite;
+  width: fit-content;
+}

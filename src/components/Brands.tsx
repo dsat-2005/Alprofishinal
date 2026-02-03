@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
-
 const brandLogos = [
   '/brands/files_8269982-2026-02-03t17-55-47-631z-image.png',
   '/brands/files_8269982-2026-02-03t17-55-55-401z-image.png',
@@ -9,73 +7,7 @@ const brandLogos = [
 ];
 
 export default function Brands() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    let timeoutId: NodeJS.Timeout;
-    let currentIndex = 0;
-    const itemWidth = 208;
-    const gap = 0;
-
-    const scrollToItem = () => {
-      const targetScroll = currentIndex * (itemWidth + gap);
-      scrollContainer.scrollLeft = targetScroll;
-      currentIndex += 1;
-
-      if (currentIndex >= brandLogos.length) {
-        currentIndex = 0;
-      }
-
-      timeoutId = setTimeout(scrollToItem, 2000);
-    };
-
-    timeoutId = setTimeout(scrollToItem, 2000);
-
-    return () => clearTimeout(timeoutId);
-  }, []);
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    setStartX(e.pageX - (scrollRef.current?.offsetLeft || 0));
-    setScrollLeft(scrollRef.current?.scrollLeft || 0);
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX - (scrollRef.current?.offsetLeft || 0));
-    setScrollLeft(scrollRef.current?.scrollLeft || 0);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - (scrollRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2;
-    if (scrollRef.current) {
-      scrollRef.current.scrollLeft = scrollLeft - walk;
-    }
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    const x = e.touches[0].pageX - (scrollRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2;
-    if (scrollRef.current) {
-      scrollRef.current.scrollLeft = scrollLeft - walk;
-    }
-  };
-
-  const handleDragEnd = () => {
-    setIsDragging(false);
-  };
-
-  const triplicatedLogos = [...brandLogos, ...brandLogos, ...brandLogos];
+  const duplicatedLogos = [...brandLogos, ...brandLogos];
 
   return (
     <section className="py-20 bg-white">
@@ -90,22 +22,11 @@ export default function Brands() {
         </div>
 
         <div className="relative overflow-hidden py-8">
-          <div
-            ref={scrollRef}
-            className="flex gap-0 overflow-x-hidden cursor-grab active:cursor-grabbing select-none"
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleDragEnd}
-            onMouseLeave={handleDragEnd}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleDragEnd}
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {triplicatedLogos.map((logo, index) => (
+          <div className="flex gap-0 brands-scroll">
+            {duplicatedLogos.map((logo, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 bg-white hover:shadow-lg transition-all duration-300 w-52 h-40 flex items-center justify-center px-4 py-2"
+                className="flex-shrink-0 bg-white w-52 h-40 flex items-center justify-center px-4 py-2"
                 style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
               >
                 <img
