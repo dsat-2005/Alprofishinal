@@ -18,25 +18,26 @@ export default function Brands() {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    let animationId: number;
-    let scrollPosition = 0;
-    const speed = 1;
+    let timeoutId: NodeJS.Timeout;
+    let currentIndex = 0;
+    const itemWidth = 208;
+    const gap = 0;
 
-    const animate = () => {
-      scrollPosition += speed;
-      const oneSetWidth = scrollContainer.scrollWidth / 3;
+    const scrollToItem = () => {
+      const targetScroll = currentIndex * (itemWidth + gap);
+      scrollContainer.scrollLeft = targetScroll;
+      currentIndex += 1;
 
-      if (scrollPosition >= oneSetWidth) {
-        scrollPosition = 0;
+      if (currentIndex >= brandLogos.length) {
+        currentIndex = 0;
       }
 
-      scrollContainer.scrollLeft = scrollPosition;
-      animationId = requestAnimationFrame(animate);
+      timeoutId = setTimeout(scrollToItem, 2000);
     };
 
-    animationId = requestAnimationFrame(animate);
+    timeoutId = setTimeout(scrollToItem, 2000);
 
-    return () => cancelAnimationFrame(animationId);
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const handleMouseDown = (e: React.MouseEvent) => {
