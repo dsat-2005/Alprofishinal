@@ -1,6 +1,8 @@
 import { Phone, MessageCircle, Wind, Snowflake, Wrench, Droplet, Volume2, Zap, Settings } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import FloatingButtons from '../components/FloatingButtons';
+import SEOHead from '../components/SEOHead';
+import StructuredData from '../components/StructuredData';
 
 const whyChooseUs = [
   {
@@ -102,6 +104,21 @@ export default function AcMaintenancePage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="صيانة تكييفات في الفيوم | Alprofishinal - خدمة سريعة واحترافية"
+        description="مركز Alprofishinal لصيانة التكييفات بالفيوم - فنيين متخصصين في إصلاح جميع أنواع التكييفات سبليت وشباك - شحن فريون - تنظيف - اتصل الآن 01020136636"
+        keywords="صيانة تكييف الفيوم, تصليح تكييف الفيوم, شحن فريون الفيوم, تنظيف تكييف الفيوم, صيانة تكييف سبليت الفيوم, مركز صيانة تكييف الفيوم"
+        ogTitle="صيانة تكييفات في الفيوم | Alprofishinal"
+        ogDescription="مركز Alprofishinal لصيانة التكييفات بالفيوم - فنيين متخصصين - خدمة سريعة - أسعار مناسبة - اتصل الآن 01020136636"
+        ogUrl="https://alprofishinal.vercel.app/services/ac-maintenance"
+        ogImage="https://alprofishinal.vercel.app/services/ac-maintenance.jpg"
+      />
+      <StructuredData
+        type="service"
+        serviceName="صيانة التكييفات في الفيوم"
+        serviceDescription="مركز Alprofishinal لصيانة التكييفات بالفيوم - فنيين متخصصين في إصلاح جميع أنواع التكييفات"
+        url="https://alprofishinal.vercel.app/services/ac-maintenance"
+      />
       <Navbar />
 
       <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white min-h-[70vh] flex items-center pt-16">

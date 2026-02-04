@@ -1,6 +1,8 @@
 import { Phone, MessageCircle, Snowflake, Wrench, Volume2, Zap, Settings, ThermometerSnowflake, Droplet, Wind } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import FloatingButtons from '../components/FloatingButtons';
+import SEOHead from '../components/SEOHead';
+import StructuredData from '../components/StructuredData';
 
 const whyChooseUs = [
   {
@@ -97,6 +99,21 @@ export default function DeepFreezerMaintenancePage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="صيانة ديب فريزر في الفيوم | Alprofishinal - فنيين محترفين"
+        description="مركز Alprofishinal لصيانة الديب فريزر بالفيوم - إصلاح ضعف التجميد - تغيير موتور - شحن فريون - قطع غيار أصلية - خدمة سريعة - اتصل الآن 01020136636"
+        keywords="صيانة ديب فريزر الفيوم, تصليح ديب فريزر الفيوم, صيانة فريزر الفيوم, تصليح تجميد ديب فريزر الفيوم, مركز صيانة ديب فريزر الفيوم"
+        ogTitle="صيانة ديب فريزر في الفيوم | Alprofishinal"
+        ogDescription="مركز Alprofishinal لصيانة الديب فريزر بالفيوم - فنيين متخصصين - خدمة سريعة - ضمان شامل - اتصل الآن 01020136636"
+        ogUrl="https://alprofishinal.vercel.app/services/deep-freezer-maintenance"
+        ogImage="https://alprofishinal.vercel.app/services/deep-freezer-maintenance.jpg"
+      />
+      <StructuredData
+        type="service"
+        serviceName="صيانة الديب فريزر في الفيوم"
+        serviceDescription="مركز Alprofishinal لصيانة الديب فريزر بالفيوم - إصلاح ضعف التجميد وجميع الأعطال"
+        url="https://alprofishinal.vercel.app/services/deep-freezer-maintenance"
+      />
       <Navbar />
 
       <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white min-h-[70vh] flex items-center pt-16">

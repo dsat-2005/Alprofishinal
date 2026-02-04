@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- الصفحة الرئيسية -->
+  <url>
+    <loc>https://alprofishinal.vercel.app/</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://alprofishinal.vercel.app/whatsapp_image_2026-02-03_at_3.26.12_pm.jpeg</image:loc>
+      <image:title>Alprofishinal - مركز صيانة التكييف والتبريد بالفيوم</image:title>
+    </image:image>
+  </url>
+
+  <!-- صفحة صيانة التكييفات -->
+  <url>
+    <loc>https://alprofishinal.vercel.app/services/ac-maintenance</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://alprofishinal.vercel.app/services/ac-maintenance.jpg</image:loc>
+      <image:title>صيانة التكييفات في الفيوم</image:title>
+    </image:image>
+  </url>
+
+  <!-- صفحة صيانة الثلاجات -->
+  <url>
+    <loc>https://alprofishinal.vercel.app/services/refrigerator-maintenance</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://alprofishinal.vercel.app/services/refrigerator-maintenance.jpg</image:loc>
+      <image:title>صيانة الثلاجات في الفيوم</image:title>
+    </image:image>
+  </url>
+
+  <!-- صفحة صيانة الغسالات الهاف -->
+  <url>
+    <loc>https://alprofishinal.vercel.app/services/washer-maintenance</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://alprofishinal.vercel.app/services/washer-maintenance.jpg</image:loc>
+      <image:title>صيانة الغسالات الهاف في الفيوم</image:title>
+    </image:image>
+  </url>
+
+  <!-- صفحة صيانة الديب فريزر -->
+  <url>
+    <loc>https://alprofishinal.vercel.app/services/deep-freezer-maintenance</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://alprofishinal.vercel.app/services/deep-freezer-maintenance.jpg</image:loc>
+      <image:title>صيانة الديب فريزر في الفيوم</image:title>
+    </image:image>
+  </url>
+
+</urlset>

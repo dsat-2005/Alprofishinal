@@ -1,6 +1,8 @@
 import { Phone, MessageCircle, Snowflake, Wrench, Droplet, ThermometerSnowflake, Volume2, Zap, Settings } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import FloatingButtons from '../components/FloatingButtons';
+import SEOHead from '../components/SEOHead';
+import StructuredData from '../components/StructuredData';
 
 const whyChooseUs = [
   {
@@ -102,6 +104,21 @@ export default function RefrigeratorMaintenancePage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="صيانة ثلاجات في الفيوم | Alprofishinal - فنيين متخصصين"
+        description="مركز Alprofishinal لصيانة الثلاجات بالفيوم - إصلاح جميع الأعطال - ضعف التبريد - تسريب المياه - تصليح موتور - قطع غيار أصلية - اتصل الآن 01020136636"
+        keywords="صيانة ثلاجات الفيوم, تصليح ثلاجات الفيوم, صيانة فريزر الفيوم, تصليح تبريد ثلاجة الفيوم, مركز صيانة ثلاجات الفيوم"
+        ogTitle="صيانة ثلاجات في الفيوم | Alprofishinal"
+        ogDescription="مركز Alprofishinal لصيانة الثلاجات بالفيوم - فنيين متخصصين - خدمة سريعة - ضمان شامل - اتصل الآن 01020136636"
+        ogUrl="https://alprofishinal.vercel.app/services/refrigerator-maintenance"
+        ogImage="https://alprofishinal.vercel.app/services/refrigerator-maintenance.jpg"
+      />
+      <StructuredData
+        type="service"
+        serviceName="صيانة الثلاجات في الفيوم"
+        serviceDescription="مركز Alprofishinal لصيانة الثلاجات بالفيوم - إصلاح جميع الأعطال بسرعة واحترافية"
+        url="https://alprofishinal.vercel.app/services/refrigerator-maintenance"
+      />
       <Navbar />
 
       <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white min-h-[70vh] flex items-center pt-16">

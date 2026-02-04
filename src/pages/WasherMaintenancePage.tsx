@@ -1,6 +1,8 @@
 import { Phone, MessageCircle, Droplet, Wrench, Volume2, Zap, Settings, Repeat } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import FloatingButtons from '../components/FloatingButtons';
+import SEOHead from '../components/SEOHead';
+import StructuredData from '../components/StructuredData';
 
 const whyChooseUs = [
   {
@@ -102,6 +104,21 @@ export default function WasherMaintenancePage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="صيانة غسالات هاف في الفيوم | Alprofishinal - خدمة احترافية"
+        description="مركز Alprofishinal لصيانة الغسالات الهاف بالفيوم - إصلاح أعطال العصر والتفريغ - تغيير موتور - قطع غيار أصلية - فنيين خبراء - اتصل الآن 01020136636"
+        keywords="صيانة غسالات الفيوم, تصليح غسالات الفيوم, صيانة غسالة هاف الفيوم, تصليح عصارة غسالة الفيوم, مركز صيانة غسالات الفيوم"
+        ogTitle="صيانة غسالات هاف في الفيوم | Alprofishinal"
+        ogDescription="مركز Alprofishinal لصيانة الغسالات الهاف بالفيوم - فنيين متخصصين - خدمة سريعة - ضمان - اتصل الآن 01020136636"
+        ogUrl="https://alprofishinal.vercel.app/services/washer-maintenance"
+        ogImage="https://alprofishinal.vercel.app/services/washer-maintenance.jpg"
+      />
+      <StructuredData
+        type="service"
+        serviceName="صيانة الغسالات الهاف في الفيوم"
+        serviceDescription="مركز Alprofishinal لصيانة الغسالات الهاف بالفيوم - إصلاح أعطال العصر والتفريغ"
+        url="https://alprofishinal.vercel.app/services/washer-maintenance"
+      />
       <Navbar />
 
       <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white min-h-[70vh] flex items-center pt-16">

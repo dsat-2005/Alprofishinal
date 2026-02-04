@@ -9,10 +9,21 @@ import Testimonials from '../components/Testimonials';
 import CoverageAreas from '../components/CoverageAreas';
 import Contact from '../components/Contact';
 import FloatingButtons from '../components/FloatingButtons';
+import SEOHead from '../components/SEOHead';
+import StructuredData from '../components/StructuredData';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="Alprofishinal | مركز صيانة التكييف والتبريد بالفيوم"
+        description="مركز متخصص في صيانة التكييف والتبريد والأجهزة المنزلية بالفيوم – خدمة سريعة – فنيين محترفين – أسعار مناسبة"
+        keywords="صيانة تكييف الفيوم, تصليح ثلاجات الفيوم, صيانة غسالات الفيوم, صيانة تبريد الفيوم, مركز صيانة الفيوم, Alprofishinal"
+        ogTitle="Alprofishinal | مركز صيانة التكييف والتبريد بالفيوم"
+        ogDescription="مركز متخصص في صيانة التكييف والتبريد والأجهزة المنزلية بالفيوم – خدمة سريعة – فنيين محترفين – أسعار مناسبة"
+        ogUrl="https://alprofishinal.vercel.app/"
+      />
+      <StructuredData type="homepage" url="https://alprofishinal.vercel.app/" />
       <Navbar />
       <Hero />
       <About />
