@@ -12,7 +12,7 @@ export default function Hero() {
           <img
             src="/whatsapp_image_2026-02-03_at_3.26.12_pm.jpeg"
             alt="Alprofishinal"
-            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 drop-shadow-lg"
+            className="w-40 h-40 md:w-52 md:h-52 mx-auto mb-8 drop-shadow-lg"
           />
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Alprofishinal
