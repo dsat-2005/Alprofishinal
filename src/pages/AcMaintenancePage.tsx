@@ -265,6 +265,24 @@ export default function AcMaintenancePage() {
         </div>
       </section>
 
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                الماركات التي نخدمها في صيانة التكييفات
+              </h2>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-8 md:p-12 shadow-lg">
+              <p className="text-2xl md:text-3xl text-gray-800 font-semibold text-center leading-relaxed">
+                Fresh – LG – Carrier – Hisense – Koldair – American Cool – Gree – Deio – Creft
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-blue-600 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
