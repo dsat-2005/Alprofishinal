@@ -279,7 +279,7 @@ export default function RefrigeratorMaintenancePage() {
 
             <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-8 md:p-12 shadow-lg">
               <p className="text-2xl md:text-3xl text-gray-800 font-semibold text-center leading-relaxed">
-                Toshiba – Kiriazi – Beko – Tornado – Fresh – Electrostar
+                Toshiba – Kiriazi – Beko – Tornado – Fresh – Electrostar - LG
               </p>
             </div>
           </div>
