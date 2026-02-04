@@ -4,10 +4,12 @@ import AcMaintenancePage from './pages/AcMaintenancePage';
 import RefrigeratorMaintenancePage from './pages/RefrigeratorMaintenancePage';
 import WasherMaintenancePage from './pages/WasherMaintenancePage';
 import DeepFreezerMaintenancePage from './pages/DeepFreezerMaintenancePage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services/ac-maintenance" element={<AcMaintenancePage />} />
